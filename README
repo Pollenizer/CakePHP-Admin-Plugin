@@ -13,9 +13,7 @@ INSTALLATION
 
     class AdminPostsController extends AdminAppController
     {
-        public $uses = array(
-            'Post'
-        );
+        public $uses = 'Post';
     }
 
 USAGE
@@ -23,3 +21,4 @@ USAGE
 
 1. Go to http://example.com/admin where example.com is the URL of your website
 2. The main navigation is built automagically from the controllers you create in app/Plugin/Admin/Controller
+3. Start administering

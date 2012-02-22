@@ -1,15 +1,37 @@
 <?php
+/**
+ * Admin App Controller
+ *
+ * PHP 5
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the below copyright notice.
+ *
+ * @author     Robert Love <robert@pollenizer.com>
+ * @copyright  Copyright 2012, Pollenizer Pty. Ltd. (http://pollenizer.com)
+ * @license    MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @since      CakePHP(tm) v 2.0.4
+ */
 
 App::uses('AppController', 'Controller');
 App::uses('Folder', 'Utility');
 
 class AdminAppController extends AppController
 {
+    /**
+     * Scaffold
+     *
+     * @var string
+     */
     public $scaffold;
 
+    /**
+     * Before Filter
+     *
+     * @return void
+     */
     public function beforeFilter()
     {
-        // Build navbar links from controllers
         $Folder = new Folder(APP . 'Plugin' . DS . 'Admin' . DS . 'Controller');
         $files = $Folder->find('.*\Controller.php');
         $navbar = array();
