@@ -32,6 +32,7 @@ class AdminAppController extends AppController
      */
     public function beforeFilter()
     {
+        parent::beforeFilter();
         $Folder = new Folder(APP . 'Plugin' . DS . 'Admin' . DS . 'Controller');
         $files = $Folder->find('.*\Controller.php', true);
         $navbar = array();
