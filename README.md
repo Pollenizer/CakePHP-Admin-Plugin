@@ -7,7 +7,11 @@ A CakePHP Plugin for sexier admin scaffolding using Twitter Bootstrap.
 1. Copy the plugin to ``app/Plugin/Admin``
 1. Enable the plugin in ``app/Config/bootstrap.php``
 
-    ```CakePlugin::loadAll(array('Admin' => array('bootstrap' => true)));```
+<pre>CakePlugin::loadAll(array(
+    'Admin' => array(
+        'bootstrap' => true
+    )
+));</pre>
 
 ## Usage
 
@@ -24,8 +28,10 @@ To use the ``adminIsAuthorized()`` callback function:
 1. Create the ``adminIsAuthorized()`` function in ``app/Config/bootstrap.php``
 1. return boolean ``true`` to allow access or boolean ``false`` to deny access
 
-    <pre>function adminIsAuthorized()
-    {
-        // Authorization logic...
+<pre>function adminIsAuthorized()
+{
+    if (the user is authorized) {
         return true;
-    }</pre>
+    }
+    return false;
+}</pre>
