@@ -24,8 +24,8 @@ To use the ``adminIsAuthorized()`` callback function:
 1. Create the ``adminIsAuthorized()`` function in ``app/Config/bootstrap.php``
 1. return boolean ``true`` to allow access or boolean ``false`` to deny access
 
-    ```function adminIsAuthorized()
+    <pre>function adminIsAuthorized()
     {
         // Authorization logic...
         return true;
-    }```
+    }</pre>
