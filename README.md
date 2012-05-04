@@ -14,3 +14,18 @@ A CakePHP Plugin for sexier admin scaffolding using Twitter Bootstrap.
 1. Go to ``http://example.com/admin`` where ``example.com`` is the URL of your website
 1. The main navigation is built "automagically" from the models in ``app/Model``
 1. Start administering
+
+## Authorization
+
+In order to control access to Admin actions, the plugin supports a ``adminIsAuthorized()`` callback function. Use of the caalback is not required and, by default, access to all actions is unrestricted.
+
+To use the ``adminIsAuthorized()`` callback function:
+
+1. Create the ``adminIsAuthorized()`` function in ``app/Config/bootstrap.php``
+1. return boolean ``true`` to allow access or boolean ``false`` to deny access
+
+    function adminIsAuthorized()
+    {
+        // Authorization logic...
+        return true;
+    }

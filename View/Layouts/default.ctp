@@ -49,6 +49,11 @@
                             </ul>
                         <?php endif; ?>
                     </div>
+                    <div class="nav-collapse pull-right">
+                        <ul class="nav">
+                            <li><?php echo $this->Html->link(__('Visit Site'), '/'); ?></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

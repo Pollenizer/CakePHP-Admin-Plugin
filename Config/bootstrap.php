@@ -15,8 +15,12 @@
 
 App::uses('CakeRequest', 'Network');
 
-$Request = new CakeRequest();
+$adminIsAuthorized = (function_exists('adminIsAuthorized')) ? adminIsAuthorized() : true;
+if ($adminIsAuthorized === false) {
+    throw new MethodNotAllowedException();
+}
 
+$Request = new CakeRequest();
 if (isset($Request->url)) {
     $parts = explode('/', $Request->url);
     if ((isset($parts[0])) && ($parts[0] == 'admin')) {
